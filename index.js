@@ -1,0 +1,1 @@
+import KurdishNumbersToWords from 'kurdish-numbers-to-words'

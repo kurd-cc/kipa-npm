@@ -1,0 +1,29 @@
+{
+  "name": "kipa",
+  "version": "1.0.0",
+  "description": "Convert Kurdish texts to IPA phonetics ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurd-cc/kipa-npm.git"
+  },
+  "keywords": [
+    "kurdish",
+    "phonetices",
+    "kurmanji",
+    "ipa",
+    "language"
+  ],
+  "author": "Jagar Yousef <jagar.yousef@gmail.com> (jagar.me)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kurd-cc/kipa-npm/issues"
+  },
+  "homepage": "https://github.com/kurd-cc/kipa-npm#readme",
+  "dependencies": {
+    "kurdish-numbers-to-words": "^1.0.1"
+  }
+}
