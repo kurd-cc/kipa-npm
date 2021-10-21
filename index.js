@@ -222,6 +222,3 @@ export default class Kipa {
         return this.get_ipa(text)['resulted_ipa']
     }
 }
-
-let ipa = Kipa.get_ipa('dem baş ji bo we hemûyan û 4 kesên din jî!')
-console.log(ipa)
