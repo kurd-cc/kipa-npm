@@ -1,6 +1,6 @@
 {
   "name": "kipa",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert Kurdish texts to IPA phonetics ",
   "main": "index.js",
   "type": "module",
@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/kurd-cc/kipa-npm#readme",
   "dependencies": {
-    "kurdish-numbers-to-words": "^1.0.1"
+    "kurdish-numbers-to-words": "^1.0.1",
+    "kurdish-wiktionary": "^1.0.0"
   },
   "devDependencies": {
     "mocha": "^9.1.3"

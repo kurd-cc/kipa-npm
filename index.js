@@ -1,4 +1,6 @@
 import KurdishNumbersToWords from "kurdish-numbers-to-words";
+import KurdishWiktionary from "kurdish-wiktionary";
+
 
 const kurdish_ipa = [
     "b",
@@ -130,6 +132,13 @@ export default class Kipa {
 
     static _convert_ipa_word(word){
         word = word.toLowerCase()
+        try{
+            const ipa = KurdishWiktionary.get_sounds(word)['sounds'][0]['ipa'].replaceAll('/', '').trim()
+            return {word : word, first_ipa: ipa, second_ipa: '', reasons: []}
+        }catch (e){
+            //ignore
+        }
+
         const reasons = []
         const numbers = this._extract_numbers(word)
         numbers.forEach((number) => word = word.replace(number, KurdishNumbersToWords.convert(parseInt(number))))
@@ -137,7 +146,7 @@ export default class Kipa {
         let first_possibility = word
         let second_possibility = word
 
-        if (word.includes('l') || word.includes('h')){
+        if (word.includes('l') || word.includes('h') || word.includes('r')){
             reasons.push('Different accents or positions')
         }
 
@@ -153,7 +162,7 @@ export default class Kipa {
         [...word].forEach((letter) => {
 
             if (!(letter === 'ŋ' || letter === ' ' || letter === '|')){
-                if (letter === 'h' || letter === 'l'){
+                if (letter === 'h' || letter === 'l' || letter === 'r'){
                     const indices = kurdish_letters.getAllIndexes(letter)
                     second_possibility = second_possibility.replace(letter, kurdish_ipa[indices[1]])
                     first_possibility = first_possibility.replace(letter, kurdish_ipa[indices[0]])
